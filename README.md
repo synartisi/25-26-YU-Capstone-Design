@@ -5,9 +5,9 @@
 ## Quick Install
 > **Arduino:**
 
-'''bash
+```bash
 git clone https://github.com/synartisi/25-26-YU-Capstone-Design.git && cd 25-26-YU-Capstone-Design
-'''
+```
 
 > **Python:**
 
