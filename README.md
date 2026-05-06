@@ -1,13 +1,12 @@
 # 🛠️ 25-26 기계공학 캡스톤디자인
 **Yeungnam University | Mechanical Engineering**
 ---
-![School](https://www.yu.ac.kr/main/index.do)
----
 ### 프로젝트 소개
 본 저장소는 영남대학교 기계공학부 기계공학전공(정창윤 교수님) 25-26 캡스톤디자인 프로젝트를 위한 공간입니다.
-25-26 Yeungnam University Mechanical Engineering Capstone Design
+2025-2026 Yeungnam University Mechanical Engineering Capstone Design
 > **Distro support:** **Rasberry Pi 5 8GB's Operating system Raspbian OS (Debian Distros)* is main.\
-> **Used Programs:** **아두이노 IDE, VSCODE, Linux Terminal(bash:Gnome 내장 nano), LLMs(Google Gemini)..etc.
+> **Used Programs:** **아두이노 IDE, VSCODE, Linux Terminal(bash:Gnome 내장 nano), LLMs(Google Gemini)..etc(추가 가능)
+---
 ## Quick Install
 > **Install Files:** Arduino(cpp) & Python
 
@@ -41,6 +40,6 @@ git clone https://github.com/synartisi/25-26-YU-Capstone-Design.git && cd 25-26-
   4. 구동부 차량 수령 필요
   5. Arduino + HC-06 + IMU 데이터 블루투스 통신 with 라즈베리파이 통신 확인 ✅
 
-
+---
 ## ***논문(포스터, 결과 보고서, 발표영상)*** 제출 및 프로젝트 마무리 기한(**Deadline**) : ~ 26-05-25
  ### 작업 중 작업 과정, 문제 발생, 시험 구동, 데이터 측정 등 최대한 많은 사진, 영상을 남겨주세요.
