@@ -1,12 +1,13 @@
 # 25-26 Yeungnam University Mechanical Engineering Capstone Design
 25-26년도 영남대학교 기계공학부 캡스톤디자인(정창윤 교수님) Codes Repo.
 > **Distro support:** **Rasberry Pi 5 8GB's Operating system Raspbian OS (Debian Distros)* is main.
+
 > **Used Programs:** **아두이노 IDE, VSCODE, Linux Terminal(bash:Gnome 내장 nano), LLMs(Google Gemini)..etc.
 ## Quick Install
 > **Install Files:** Arduino(cpp) & Python
 
 ### How to Install (Windows)
-1. Install [git bash|https://git-scm.com/install/windows]
+1. Install [[git bash|https://git-scm.com/install/windows]]
 
 ```bash
 git repo clone https://github.com/synartisi/YU-capstone-25-26.git
