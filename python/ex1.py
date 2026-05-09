@@ -4,7 +4,7 @@ import time
 
 # 1. 시리얼 포트 설정 (사용자의 환경에 맞게 'COM3' 등을 수정하세요)
 PORT = "COM3"
-BAUD_RATE = 115200
+BAUD_RATE = 9600
 TIMEOUT = 1
 
 
