@@ -10,7 +10,7 @@ unsigned char rxBuffer[11];
 
 void setup() {
   // PC와의 시리얼 통신 (모니터링용)
-  Serial.begin(115200); 
+  Serial.begin(9600); 
   // IMU 센서와의 통신 (SoftwareSerial)
   imuSerial.begin(9600); 
   
