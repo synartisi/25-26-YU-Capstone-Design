@@ -1,0 +1,681 @@
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+Can't connect RFCOMM socket: Device or resource busy
+test@test:~ $ cat /dev/rfcomm0
+test@test:~ $ sudo rfcomm release 0
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+Connected /dev/rfcomm0 to 00:23:04:00:04:C9 on channel 1
+Press CTRL-C for hangup
+^CDisconnected
+test@test:~ $ sudo rfcomm release 0
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+Connected /dev/rfcomm0 to 00:23:04:00:04:C9 on channel 1
+Press CTRL-C for hangup
+Disconnected
+test@test:~ $ sudo rfcomm release 0
+Can't release device: No such device
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+Can't connect RFCOMM socket: Connection reset by peer
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+^C
+test@test:~ $ sudo bluetoothctl
+Agent registered
+hci0 00:23:04:00:04:C9 type BR/EDR disconnected with reason 3
+[CHG] Device 00:23:04:00:04:C9 Connected: no
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+hci0 type 7 discovering on
+Discovery started
+[CHG] Controller D8:3A:DD:98:95:0B Discovering: yes
+[NEW] Device 61:D2:EA:FF:34:6F 61-D2-EA-FF-34-6F
+[NEW] Device 57:04:E7:BE:6D:6C 57-04-E7-BE-6D-6C
+[NEW] Device 75:29:FC:BA:39:ED 75-29-FC-BA-39-ED
+[NEW] Device 47:0C:1D:28:4E:90 47-0C-1D-28-4E-90
+[NEW] Device 61:E9:7D:27:40:43 61-E9-7D-27-40-43
+[NEW] Device 7B:F2:87:00:6D:E0 7B-F2-87-00-6D-E0
+[NEW] Device 41:10:D6:B2:11:B8 41-10-D6-B2-11-B8
+[NEW] Device 59:C0:61:13:BA:66 59-C0-61-13-BA-66
+[NEW] Device 6C:C2:0D:08:9C:BB 6C-C2-0D-08-9C-BB
+[NEW] Device 41:E7:27:A7:4C:79 41-E7-27-A7-4C-79
+[NEW] Device 79:DD:91:0D:B7:9A 79-DD-91-0D-B7-9A
+[NEW] Device 4D:82:F9:D2:B6:49 4D-82-F9-D2-B6-49
+[CHG] Device 00:23:04:00:04:C9 RSSI: 0xffffffcc (-52)
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[CHG] Device 61:E9:7D:27:40:43 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 61:E9:7D:27:40:43 ManufacturerData.Value:
+  0c 0e 00 68 71 cc 23 d7 d4 54 79 37 9e a1 e7 19  ...hq.#..Ty7....
+  10 06 40 1d 6a 2e 37 08                          ..@.j.7.        
+[CHG] Device 75:29:FC:BA:39:ED ManufacturerData.Key: 0x004c (76)
+[CHG] Device 75:29:FC:BA:39:ED ManufacturerData.Value:
+  0c 0e 00 68 71 cc 23 d7 d4 54 79 37 9e a1 e7 19  ...hq.#..Ty7....
+  10 06 40 1d 6a 2e 37 08                          ..@.j.7.        
+[CHG] Device 41:10:D6:B2:11:B8 RSSI: 0xffffffa5 (-91)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 57:04:E7:BE:6D:6C RSSI: 0xffffffbb (-69)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[NEW] Device C3:B7:9D:AB:0A:1E C3-B7-9D-AB-0A-1E
+[NEW] Device FE:94:AB:B7:94:B9 FE-94-AB-B7-94-B9
+[NEW] Device CF:36:85:ED:2A:F5 CF-36-85-ED-2A-F5
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[CHG] Device 59:C0:61:13:BA:66 RSSI: 0xffffffd3 (-45)
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Value:
+  02 18 61 a1 3d b9 0b aa e2 e8 60 34 90 7f 7f 28  ..a.=.....`4...(
+  20 9a 70 46 08 96 3a b9                           .pF..:.        
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 47:0C:1D:28:4E:90 RSSI: 0xffffffd4 (-44)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 75:29:FC:BA:39:ED TxPower: 0x000c (12)
+[CHG] Device 75:29:FC:BA:39:ED ManufacturerData.Key: 0x004c (76)
+[CHG] Device 75:29:FC:BA:39:ED ManufacturerData.Value:
+  10 06 40 1d 6a 2e 37 08                          ..@.j.7.        
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  10 06 0e 1d 15 cf fa 78                          .......x        
+[CHG] Device 61:E9:7D:27:40:43 TxPower: 0x000c (12)
+[CHG] Device 61:E9:7D:27:40:43 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 61:E9:7D:27:40:43 ManufacturerData.Value:
+  10 06 40 1d 6a 2e 37 08                          ..@.j.7.        
+[NEW] Device 52:80:AC:52:D9:F7 52-80-AC-52-D9-F7
+hci0 type 7 discovering off
+[DEL] Device FE:94:AB:B7:94:B9 FE-94-AB-B7-94-B9
+hci0 type 7 discovering on
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 47:0C:1D:28:4E:90 RSSI: 0xffffffbf (-65)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:10:D6:B2:11:B8 RSSI: 0xffffffad (-83)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 59:C0:61:13:BA:66 RSSI: 0xffffffc4 (-60)
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 79:DD:91:0D:B7:9A RSSI: 0xffffffa4 (-92)
+[NEW] Device 5E:B5:DC:51:19:86 5E-B5-DC-51-19-86
+[NEW] Device FE:94:AB:B7:94:B9 FE-94-AB-B7-94-B9
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[CHG] Device 47:0C:1D:28:4E:90 RSSI: 0xffffffc7 (-57)
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 59:C0:61:13:BA:66 ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 75:29:FC:BA:39:ED ManufacturerData.Key: 0x004c (76)
+[CHG] Device 75:29:FC:BA:39:ED ManufacturerData.Value:
+  10 06 4c 1d 6a 2e 37 48                          ..L.j.7H        
+[CHG] Device 61:E9:7D:27:40:43 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 61:E9:7D:27:40:43 ManufacturerData.Value:
+  10 06 4c 1d 6a 2e 37 48                          ..L.j.7H        
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[DEL] Device 5E:B5:DC:51:19:86 5E-B5-DC-51-19-86
+[CHG] Device 79:DD:91:0D:B7:9A RSSI: 0xffffffae (-82)
+[CHG] Device 57:04:E7:BE:6D:6C RSSI: 0xffffffc4 (-60)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 47:0C:1D:28:4E:90 RSSI: 0xffffffbd (-67)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[NEW] Device 41:AC:76:9A:8C:CC 41-AC-76-9A-8C-CC
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[DEL] Device FE:94:AB:B7:94:B9 FE-94-AB-B7-94-B9
+hci0 type 7 discovering off
+[bluetoothctl]> ls      
+Invalid command in menu main: ls
+
+Use "help" for a list of available commands in a menu.
+Use "menu <submenu>" if you want to enter any submenu.
+Use "back" if you want to return to menu main.
+[DEL] Device 59:C0:61:13:BA:66 59-C0-61-13-BA-66
+hci0 type 7 discovering on
+[DEL] Device 52:80:AC:52:D9:F7 52-80-AC-52-D9-F7
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 61:E9:7D:27:40:43 RSSI: 0xffffffbb (-69)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 75:29:FC:BA:39:ED RSSI: 0xffffffb9 (-71)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[NEW] Device 4E:42:22:F7:16:62 4E-42-22-F7-16-62
+[bluetoothctl]> cexit
+Invalid command in menu main: cexit
+
+Use "help" for a list of available commands in a menu.
+Use "menu <submenu>" if you want to enter any submenu.
+Use "back" if you want to return to menu main.
+[NEW] Device 52:80:AC:52:D9:F7 52-80-AC-52-D9-F7
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+Failed to start discovery: org.bluez.Error.InProgress
+[bluetoothctl]> 
+[bluetoothctl]> exit
+test@test:~ $ sudo bluetoothctl
+Agent registered
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+hci0 type 7 discovering on
+Discovery started
+[CHG] Controller D8:3A:DD:98:95:0B Discovering: yes
+[CHG] Device 57:04:E7:BE:6D:6C RSSI: 0xffffffbe (-66)
+[CHG] Device 57:04:E7:BE:6D:6C TxPower: 0x0008 (8)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 7B:F2:87:00:6D:E0 RSSI: 0xffffffbb (-69)
+[CHG] Device 7B:F2:87:00:6D:E0 TxPower: 0x000b (11)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:10:D6:B2:11:B8 RSSI: 0xffffffaa (-86)
+[CHG] Device 41:10:D6:B2:11:B8 TxPower: 0x000c (12)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  10 06 0e 1d 15 cf fa 78                          .......x        
+[CHG] Device 75:29:FC:BA:39:ED RSSI: 0xffffffb7 (-73)
+[CHG] Device 75:29:FC:BA:39:ED TxPower: 0x000c (12)
+[CHG] Device 47:0C:1D:28:4E:90 RSSI: 0xffffffb7 (-73)
+[CHG] Device 61:E9:7D:27:40:43 RSSI: 0xffffffb7 (-73)
+[CHG] Device 61:E9:7D:27:40:43 TxPower: 0x000c (12)
+[CHG] Device 61:D2:EA:FF:34:6F RSSI: 0xffffffc0 (-64)
+[CHG] Device 61:D2:EA:FF:34:6F TxPower: 0x000c (12)
+[CHG] Device 41:AC:76:9A:8C:CC RSSI: 0xffffffc8 (-56)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 52:80:AC:52:D9:F7 RSSI: 0xffffffaa (-86)
+[CHG] Device 52:80:AC:52:D9:F7 TxPower: 0x000c (12)
+[CHG] Device 4D:82:F9:D2:B6:49 RSSI: 0xffffffc3 (-61)
+[CHG] Device 79:DD:91:0D:B7:9A RSSI: 0xffffffab (-85)
+[CHG] Device 79:DD:91:0D:B7:9A TxPower: 0x0011 (17)
+[CHG] Device 41:E7:27:A7:4C:79 RSSI: 0xffffffac (-84)
+[CHG] Device 41:E7:27:A7:4C:79 TxPower: 0x0011 (17)
+[NEW] Device 5E:B5:DC:51:19:86 5E-B5-DC-51-19-86
+[NEW] Device FE:94:AB:B7:94:B9 FE-94-AB-B7-94-B9
+[CHG] Device 00:23:04:00:04:C9 RSSI: 0xffffffcc (-52)
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 75:29:FC:BA:39:ED RSSI: 0xffffffbf (-65)
+[CHG] Device 6C:C2:0D:08:9C:BB RSSI: 0xffffffa5 (-91)
+[CHG] Device 6C:C2:0D:08:9C:BB TxPower: 0x000b (11)
+[CHG] Device 4E:42:22:F7:16:62 RSSI: 0xffffff9f (-97)
+[CHG] Device 4E:42:22:F7:16:62 TxPower: 0x0011 (17)
+[DEL] Device CF:36:85:ED:2A:F5 CF-36-85-ED-2A-F5
+hci0 type 7 discovering off
+[DEL] Device C3:B7:9D:AB:0A:1E C3-B7-9D-AB-0A-1E
+hci0 type 7 discovering on
+[CHG] Device 75:29:FC:BA:39:ED RSSI: 0xffffffb6 (-74)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:04:E7:BE:6D:6C ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 61:D2:EA:FF:34:6F RSSI: 0xffffffb1 (-79)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[NEW] Device 71:D5:88:3D:F1:BC 71-D5-88-3D-F1-BC
+[DEL] Device 52:80:AC:52:D9:F7 52-80-AC-52-D9-F7
+[DEL] Device FE:94:AB:B7:94:B9 FE-94-AB-B7-94-B9
+[NEW] Device C3:B7:9D:AB:0A:1E C3-B7-9D-AB-0A-1E
+[bluetoothctl]> exit
+test@test:~ $ ls
+Arduino  Documents  Music     Public     Videos
+Desktop  Downloads  Pictures  Templates  projects
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+Can't connect RFCOMM socket: Connection reset by peer
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+^C
+test@test:~ $ sudo bluetoothctl                      
+Agent registered
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+hci0 type 7 discovering on
+Discovery started
+[CHG] Controller D8:3A:DD:98:95:0B Discovering: yes
+[NEW] Device 41:AC:76:9A:8C:CC 41-AC-76-9A-8C-CC
+[NEW] Device 41:10:D6:B2:11:B8 41-10-D6-B2-11-B8
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc1 (-63)
+[CHG] Device 98:DA:60:0C:F5:15 ManufacturerData.Key: 0x0000 (0)
+[CHG] Device 98:DA:60:0C:F5:15 ManufacturerData.Value:
+  98 da 60 0c f5 15                                ..`...          
+[CHG] Device 98:DA:60:0C:F5:15 AdvertisingFlags:
+  0a                                               .               
+[NEW] Device 61:D2:EA:FF:34:6F 61-D2-EA-FF-34-6F
+[NEW] Device 57:3A:AB:04:7D:C1 57-3A-AB-04-7D-C1
+[NEW] Device 7B:F2:87:00:6D:E0 7B-F2-87-00-6D-E0
+[NEW] Device 79:DD:91:0D:B7:9A 79-DD-91-0D-B7-9A
+[NEW] Device 41:E7:27:A7:4C:79 41-E7-27-A7-4C-79
+[NEW] Device C3:B7:9D:AB:0A:1E C3-B7-9D-AB-0A-1E
+[NEW] Device 7E:2B:D2:DF:50:3C 7E-2B-D2-DF-50-3C
+[NEW] Device CF:36:85:ED:2A:F5 CF-36-85-ED-2A-F5
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc9 (-55)
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffba (-70)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  02 18 61 a1 3d b9 0b aa e2 e8 60 34 90 7f 7f 28  ..a.=.....`4...(
+  20 9a 70 46 08 96 3a b9                           .pF..:.        
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  10 06 0e 1d 15 cf fa 78                          .......x        
+[NEW] Device 6B:E1:87:EE:24:91 6B-E1-87-EE-24-91
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc6 (-58)
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[NEW] Device 65:6E:1B:68:BA:FE 65-6E-1B-68-BA-FE
+[CHG] Device 7B:F2:87:00:6D:E0 RSSI: 0xffffffc3 (-61)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC RSSI: 0xffffffc8 (-56)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[NEW] Device 4E:42:22:F7:16:62 4E-42-22-F7-16-62
+hci0 type 7 discovering off
+[DEL] Device 41:E7:27:A7:4C:79 41-E7-27-A7-4C-79
+hci0 type 7 discovering on
+[CHG] Device 41:AC:76:9A:8C:CC RSSI: 0xffffffc0 (-64)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[NEW] Device 66:C1:AB:B2:A6:84 66-C1-AB-B2-A6-84
+[DEL] Device C3:B7:9D:AB:0A:1E C3-B7-9D-AB-0A-1E
+[NEW] Device 4D:C7:3D:FB:B0:FB 4D-C7-3D-FB-B0-FB
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffbd (-67)
+hci0 type 7 discovering off
+[DEL] Device 61:D2:EA:FF:34:6F 61-D2-EA-FF-34-6F
+hci0 type 7 discovering on
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[NEW] Device C1:81:80:C6:BF:C3 C1-81-80-C6-BF-C3
+hci0 type 7 discovering off
+[DEL] Device CF:36:85:ED:2A:F5 CF-36-85-ED-2A-F5
+hci0 type 7 discovering on
+[CHG] Device 57:3A:AB:04:7D:C1 RSSI: 0xffffffb7 (-73)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  10 06 0e 1d 15 cf fa 78                          .......x        
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[NEW] Device F3:B9:8E:90:2E:74 F3-B9-8E-90-2E-74
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[DEL] Device 4D:C7:3D:FB:B0:FB 4D-C7-3D-FB-B0-FB
+[NEW] Device 4D:C7:3D:FB:B0:FB 4D-C7-3D-FB-B0-FB
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc6 (-58)
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[DEL] Device 4E:42:22:F7:16:62 4E-42-22-F7-16-62
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffbd (-67)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[NEW] Device 73:5E:76:30:A1:A7 73-5E-76-30-A1-A7
+hci0 type 7 discovering off
+[DEL] Device F3:B9:8E:90:2E:74 F3-B9-8E-90-2E-74
+hci0 type 7 discovering on
+[DEL] Device 4D:C7:3D:FB:B0:FB 4D-C7-3D-FB-B0-FB
+[DEL] Device C1:81:80:C6:BF:C3 C1-81-80-C6-BF-C3
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  10 06 0e 1d 15 cf fa 78                          .......x        
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  10 07 64 1f 47 da 1d 93 18                       ..d.G....       
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[NEW] Device C1:81:80:C6:BF:C3 C1-81-80-C6-BF-C3
+[NEW] Device F4:1D:02:C7:E6:0C F4-1D-02-C7-E6-0C
+[NEW] Device 78:D4:78:96:E5:8F 78-D4-78-96-E5-8F
+hci0 type 7 discovering off
+[DEL] Device 73:5E:76:30:A1:A7 73-5E-76-30-A1-A7
+hci0 type 7 discovering on
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffb5 (-75)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[NEW] Device 4D:C7:3D:FB:B0:FB 4D-C7-3D-FB-B0-FB
+hci0 type 7 discovering off
+[DEL] Device C1:81:80:C6:BF:C3 C1-81-80-C6-BF-C3
+[DEL] Device F4:1D:02:C7:E6:0C F4-1D-02-C7-E6-0C
+hci0 type 7 discovering on
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc2 (-62)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+hci0 type 7 discovering off
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+Failed to start discovery: org.bluez.Error.InProgress
+[bluetoothctl]> exit
+test@test:~ $ sudo bluetoothctl
+Agent registered
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+hci0 type 7 discovering on
+Discovery started
+[CHG] Controller D8:3A:DD:98:95:0B Discovering: yes
+[CHG] Device 57:3A:AB:04:7D:C1 RSSI: 0xffffffbb (-69)
+[CHG] Device 57:3A:AB:04:7D:C1 TxPower: 0x0008 (8)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 66:C1:AB:B2:A6:84 RSSI: 0xffffffba (-70)
+[CHG] Device 66:C1:AB:B2:A6:84 TxPower: 0x000c (12)
+[CHG] Device 7B:F2:87:00:6D:E0 RSSI: 0xffffffba (-70)
+[CHG] Device 7B:F2:87:00:6D:E0 TxPower: 0x000b (11)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffbc (-68)
+[CHG] Device 41:AC:76:9A:8C:CC RSSI: 0xffffffc5 (-59)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 41:10:D6:B2:11:B8 RSSI: 0xffffffb0 (-80)
+[CHG] Device 41:10:D6:B2:11:B8 TxPower: 0x000c (12)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 65:6E:1B:68:BA:FE RSSI: 0xffffffad (-83)
+[CHG] Device 65:6E:1B:68:BA:FE TxPower: 0x0011 (17)
+[CHG] Device 6B:E1:87:EE:24:91 RSSI: 0xffffffa5 (-91)
+[CHG] Device 6B:E1:87:EE:24:91 TxPower: 0x000b (11)
+[NEW] Device F4:1D:02:C7:E6:0C F4-1D-02-C7-E6-0C
+[CHG] Device 79:DD:91:0D:B7:9A RSSI: 0xffffffac (-84)
+[CHG] Device 79:DD:91:0D:B7:9A TxPower: 0x0011 (17)
+[CHG] Device 7E:2B:D2:DF:50:3C RSSI: 0xffffffb6 (-74)
+[bluetoothctl]> clear
+Invalid command in menu main: clear
+
+Use "help" for a list of available commands in a menu.
+Use "menu <submenu>" if you want to enter any submenu.
+Use "back" if you want to return to menu main.
+[bluetoothctl]>     
+[bluetoothctl]> 
+hci0 type 7 discovering off
+[bluetoothctl]> 
+[bluetoothctl]> 
+[bluetoothctl]> 
+[bluetoothctl]> 
+[DEL] Device 78:D4:78:96:E5:8F 78-D4-78-96-E5-8F
+[bluetoothctl]> scan off
+[CHG] Device 7E:2B:D2:DF:50:3C RSSI is nil
+[CHG] Device 79:DD:91:0D:B7:9A TxPower is nil
+[CHG] Device 79:DD:91:0D:B7:9A RSSI is nil
+[CHG] Device 6B:E1:87:EE:24:91 TxPower is nil
+[CHG] Device 6B:E1:87:EE:24:91 RSSI is nil
+[CHG] Device 65:6E:1B:68:BA:FE TxPower is nil
+[CHG] Device 65:6E:1B:68:BA:FE RSSI is nil
+[CHG] Device 41:10:D6:B2:11:B8 TxPower is nil
+[CHG] Device 41:10:D6:B2:11:B8 RSSI is nil
+[CHG] Device 41:AC:76:9A:8C:CC RSSI is nil
+[CHG] Device 98:DA:60:0C:F5:15 RSSI is nil
+[CHG] Device 7B:F2:87:00:6D:E0 TxPower is nil
+[CHG] Device 7B:F2:87:00:6D:E0 RSSI is nil
+[CHG] Device 66:C1:AB:B2:A6:84 TxPower is nil
+[CHG] Device 66:C1:AB:B2:A6:84 RSSI is nil
+[CHG] Device 57:3A:AB:04:7D:C1 TxPower is nil
+[CHG] Device 57:3A:AB:04:7D:C1 RSSI is nil
+[CHG] Controller D8:3A:DD:98:95:0B Discovering: no
+Discovery stopped
+[DEL] Device 4D:C7:3D:FB:B0:FB 4D-C7-3D-FB-B0-FB
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+hci0 type 7 discovering on
+Discovery started
+[CHG] Controller D8:3A:DD:98:95:0B Discovering: yes
+[CHG] Device 41:10:D6:B2:11:B8 RSSI: 0xffffffae (-82)
+[CHG] Device 41:10:D6:B2:11:B8 TxPower: 0x000c (12)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 41:10:D6:B2:11:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 79:DD:91:0D:B7:9A RSSI: 0xffffffac (-84)
+[CHG] Device 79:DD:91:0D:B7:9A TxPower: 0x0011 (17)
+[CHG] Device 66:C1:AB:B2:A6:84 RSSI: 0xffffffb7 (-73)
+[CHG] Device 66:C1:AB:B2:A6:84 TxPower: 0x000c (12)
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc2 (-62)
+[CHG] Device 7B:F2:87:00:6D:E0 RSSI: 0xffffffbc (-68)
+[CHG] Device 7B:F2:87:00:6D:E0 TxPower: 0x000b (11)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 7B:F2:87:00:6D:E0 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC RSSI: 0xffffffc4 (-60)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 65:6E:1B:68:BA:FE RSSI: 0xffffffad (-83)
+[CHG] Device 65:6E:1B:68:BA:FE TxPower: 0x0011 (17)
+[CHG] Device 57:3A:AB:04:7D:C1 RSSI: 0xffffffb9 (-71)
+[CHG] Device 57:3A:AB:04:7D:C1 TxPower: 0x0008 (8)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 7E:2B:D2:DF:50:3C RSSI: 0xffffffb8 (-72)
+[NEW] Device 4D:C7:3D:FB:B0:FB 4D-C7-3D-FB-B0-FB
+[NEW] Device 54:2E:16:12:15:B8 54-2E-16-12-15-B8
+[NEW] Device 73:5E:76:30:A1:A7 73-5E-76-30-A1-A7
+[bluetoothctl]> 
+[bluetoothctl]> exit
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9
+Can't connect RFCOMM socket: Host is down
+test@test:~ $ sudo rfcomm release 0
+Can't release device: No such device
+test@test:~ $ sudo rfcomm connect 0 00:23:04:00:04:C9 1
+Can't connect RFCOMM socket: Host is down
+test@test:~ $ sudo bluetoothctl
+Agent registered
+[bluetoothctl]> scan on
+SetDiscoveryFilter success
+hci0 type 7 discovering on
+Discovery started
+[CHG] Controller D8:3A:DD:98:95:0B Discovering: yes
+[NEW] Device 57:3A:AB:04:7D:C1 57-3A-AB-04-7D-C1
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc3 (-61)
+[NEW] Device 41:AC:76:9A:8C:CC 41-AC-76-9A-8C-CC
+[NEW] Device 66:C1:AB:B2:A6:84 66-C1-AB-B2-A6-84
+[NEW] Device 54:2E:16:12:15:B8 54-2E-16-12-15-B8
+[NEW] Device 68:7E:6B:F5:47:B6 68-7E-6B-F5-47-B6
+[NEW] Device 79:DD:91:0D:B7:9A 79-DD-91-0D-B7-9A
+[NEW] Device 65:6E:1B:68:BA:FE 65-6E-1B-68-BA-FE
+[NEW] Device F4:1D:02:C7:E6:0C F4-1D-02-C7-E6-0C
+[NEW] Device 7E:2B:D2:DF:50:3C 7E-2B-D2-DF-50-3C
+[NEW] Device C1:81:80:C6:BF:C3 C1-81-80-C6-BF-C3
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffb8 (-72)
+hci0 type 7 discovering off
+hci0 type 7 discovering on
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffc4 (-60)
+[CHG] Device 68:7E:6B:F5:47:B6 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 68:7E:6B:F5:47:B6 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 20 00 00 00 00 08 00 00  ........ .......
+  00                                               .               
+[CHG] Device 54:2E:16:12:15:B8 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 54:2E:16:12:15:B8 ManufacturerData.Value:
+  01 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00  ................
+  00                                               .               
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Key: 0x0075 (117)
+[CHG] Device 41:AC:76:9A:8C:CC ManufacturerData.Value:
+  cc ea 98 e8 40                                   ....@           
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Key: 0x004c (76)
+[CHG] Device 57:3A:AB:04:7D:C1 ManufacturerData.Value:
+  01 02 00 00 00 00 00 00 20 00 00 00 00 00 00 00  ........ .......
+  00                                               .               
+[CHG] Device 98:DA:60:0C:F5:15 RSSI: 0xffffffbb (-69)
+hci0 type 7 discovering off
+[bluetoothctl]> exit
+test@test:~ $ sudo rfcomm connect 0 98:DA:60:0C:F5:15  
+Connected /dev/rfcomm0 to 98:DA:60:0C:F5:15 on channel 1
+Press CTRL-C for hangup
+^CDisconnected
+test@test:~ $ ls
+Arduino  Documents  Music     Public     Videos
+Desktop  Downloads  Pictures  Templates  projects
+test@test:~ $ c
+
+
