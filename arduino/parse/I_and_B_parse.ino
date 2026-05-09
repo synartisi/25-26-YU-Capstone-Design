@@ -9,7 +9,7 @@ byte requestAngle[] = {0x50, 0x03, 0x00, 0x3D, 0x00, 0x03, 0x99, 0x86};
 unsigned char rxBuffer[11];
 
 void setup() {
-  // PC 전송 속도는 115200 (데이터 누락 방지)
+  // PC 전송 속도는 115200 -> 9600 (데이터 누락 방지)
   Serial.begin(9600); 
   // IMU 통신 속도는 센서 기본값인 9600
   imuSerial.begin(9600); 
