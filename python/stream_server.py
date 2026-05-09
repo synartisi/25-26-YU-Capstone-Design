@@ -6,16 +6,16 @@ from threading import Condition
 from http import server
 
 PAGE="""\
-        <html>
-        <head>
-        <title>picamera MJPEG streaming demo</title>
-        </head>
-        <body>
-        <hl>PiCamera MJPEG Streaming Demo</hl>
-        <img src="stream.mjpg" width="640" height="480"/>
-        </body>
-        <html>
-        """
+<html>
+<head>
+<title>picamera MJPEG streaming demo</title>
+</head>
+<body>
+<h1>PiCamera MJPEG Streaming Demo</h1>
+<img src="stream.mjpg" width="640" height="480"/>
+</body>
+</html>
+"""
 
 class StreamingOutput(object):
     def __init__(self):
@@ -43,7 +43,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         elif self.path == '/index.html':
             content = PAGE.encode('utf-8')
             self.send_response(200)
-            self.send_header('Content-Type', 'text.html')
+            self.send_header('Content-Type', 'text/html')
             self.send_header('Content-Length', len(content))
             self.end_headers()
             self.wfile.write(content)
@@ -57,7 +57,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             try:
                 while True:
                     with output.condition:
-                          output.conditon.wait()
+                          output.condition.wait()
                           frame = output.frame
                     self.wfile.write(b'--FRAME\r\n')
                     self.send_header('Content-Type', 'image/jpeg')
@@ -68,7 +68,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             except Exception as e:
                 logging.warning(
                     'Removed streaming client %s: %s',
-                    self.cliend_address, str(e))
+                    self.client_address, str(e))
         else:
             self.send_error(404)
             self.end_headers()
