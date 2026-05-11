@@ -40,7 +40,7 @@ git clone https://github.com/synartisi/25-26-YU-Capstone-Design.git && cd 25-26-
     - MG996R servo 구동 확인 완 + 모터 전원 부족 문제 확인 ✅
   4. 구동부 차량 수령 확인 및 휠 구동 확인 완(by arduino 보드) ✅
   5. Arduino + HC-06 + IMU 데이터 블루투스 통신 with 라즈베리파이 통신 확인 ✅
-  6. 라즈베리파이4 에서 python 을 이용하여 MG966R 서보 모터 5개 가동 확인 완 ✅
+  6. 라즈베리파이4 에서 python 을 이용하여 MG966R 서보 모터 5개 가동 확인 완 ✅/
      Install them
      ```bash
      sudo apt-get update
