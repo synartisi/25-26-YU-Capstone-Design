@@ -1,7 +1,8 @@
 #include <SoftwareSerial.h>
 // WT901C485 축 기준: X=Roll(좌우), Y=Pitch(앞뒤), Z=Yaw(방향)
 // 1. 핀 설정
-const int flexPin = A0;         // 밴딩 센서 핀
+const int flexPin1 = A0;
+const int flexPin2 = A1;         // 밴딩 센서 핀
 SoftwareSerial imuSerial(2, 3); // IMU 센서 (2: RX, 3: TX)
 
 // 2. Modbus 요청 패킷 (롤링, 피칭, 요잉)
@@ -21,7 +22,8 @@ void setup() {
 
 void loop() {
   // === [PART 1: 밴딩 센서 데이터 읽기] ===
-  int flexValue = analogRead(flexPin);
+  int flexValue1 = analogRead(flexPin1);
+  int flexValue2 = analogRead(flexPin2);
 
 
   // === [PART 2: IMU 센서 데이터 요청 및 읽기] ===
@@ -58,14 +60,18 @@ void loop() {
 
   // 2. 밴딩 센서 데이터 출력 (한 줄에 이어서 출력)
   Serial.print(" | [Flex] Value: ");
-  Serial.print(flexValue);
+  Serial.print(flexValue1); Serial.print(", "); Serial.println(flexValue2);
   
   // 밴딩 센서 시각화 (간단한 바 그래프)
   Serial.print(" Graph: ");
-  int visualValue = map(flexValue, 400, 800, 0, 20); // 가독성을 위해 그래프 길이를 20으로 조절
-  for (int i = 0; i < visualValue; i++) Serial.print("-");
-  Serial.println(">");
+  int visualValue1 = map(flexValue1, 400, 800, 0, 20);
+  int visualValue2 = map(flexValue2, 400, 800, 0, 20); // 가독성을 위해 그래프 길이를 20으로 조절
+  for (int i = 0; i < visualValue1; i++) Serial.print("-");
+    Serial.println(">");
+  Serial.print(" Graph: ");
+  for (int i = 0; i < visualValue2; i++) Serial.print("-");
+    Serial.println(">");
 
   // 전체 루프 주기 조절
-  delay(100); 
+  delay(2000); 
 }
