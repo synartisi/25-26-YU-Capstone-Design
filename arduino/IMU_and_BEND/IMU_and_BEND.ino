@@ -63,15 +63,15 @@ void loop() {
   Serial.print(flexValue1); Serial.print(", "); Serial.println(flexValue2);
   
   // 밴딩 센서 시각화 (간단한 바 그래프)
-  Serial.print(" Graph: ");
+  /*Serial.print(" Graph: ");
   int visualValue1 = map(flexValue1, 400, 800, 0, 20);
   int visualValue2 = map(flexValue2, 400, 800, 0, 20); // 가독성을 위해 그래프 길이를 20으로 조절
   for (int i = 0; i < visualValue1; i++) Serial.print("-");
     Serial.println(">");
   Serial.print(" Graph: ");
   for (int i = 0; i < visualValue2; i++) Serial.print("-");
-    Serial.println(">");
+    Serial.println(">");*/
 
   // 전체 루프 주기 조절
-  delay(2000); 
+  delay(100); 
 }

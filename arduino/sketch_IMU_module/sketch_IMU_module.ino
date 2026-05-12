@@ -1,6 +1,7 @@
 #include <SoftwareSerial.h>
 
 SoftwareSerial imuSerial(2, 3); // 2번: RX (CVBE-010의 TXD), 3번: TX (CVBE-010의 RXD) ++ 아두이노 보드의 TX RX 핀사용하면 안된다고 함.
+SoftwareSerial btSerial(10, 11); 
 
 // WT901C485 축 기준: X=Roll(좌우), Y=Pitch(앞뒤), Z=Yaw(방향)
 
