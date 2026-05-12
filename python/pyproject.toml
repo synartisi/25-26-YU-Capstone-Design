@@ -1,7 +1,7 @@
 [project]
-name = "python"
+name = "capstone"
 version = "0.1.0"
-description = "Add your description here"
+description = "Raspberry Pi controller for multi-joint robotic arm and rover"
 readme = "README.md"
 requires-python = ">=3.13.5" # 현재 사용중인 라즈베리파이 4 8GB 모델의 python --version = 3.13.5 입니다.
 dependencies = []
