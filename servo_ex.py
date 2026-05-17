@@ -37,13 +37,14 @@ pca.frequency = 50
 # The pulse range is 750 - 2250 by default. This range typically gives 135 degrees of
 # range, but the default is to use 180 degrees. You can specify the expected range if you wish:
 # servo7 = servo.Servo(pca.channels[7], actuation_range=135)
-servo7 = servo.Servo(pca.channels[0])
+servo7 = servo.Servo(pca.channels[4])
 
 # We sleep in the loops to give the servo time to move into position.
-for i in range(180):
+boundary = 130
+for i in range(boundary):
     servo7.angle = i
     time.sleep(0.03)
-for i in range(180):
+for i in range(boundary):
     servo7.angle = 180 - i
     time.sleep(0.03)
 
@@ -54,4 +55,22 @@ while fraction < 1.0:
     fraction += 0.01
     time.sleep(0.03)
 
-pca.deinit()
+# servo7.angle = None
+
+#pca.deinit()
+"""
+# ... (기존 코드 생략)
+
+# 1. fraction 루프가 끝나면 이미 약 180도 근처에 도달합니다.
+# 하지만 확실하게 180도로 고정합니다.
+print("Moving to 180 degrees...")
+servo7.angle = 180
+time.sleep(1.0)  # 180도로 이동할 시간을 충분히 줍니다.
+
+# 2. 코드가 끝나기 전 0도로 이동합니다.
+print("Returning to 0 degrees before exit...")
+servo7.angle = 0
+time.sleep(1.0)  # 0도로 돌아갈 시간을 줍니다.
+"""
+# PCA9685 인스턴스를 깔끔하게 종료하려면 주석을 해제하는 것이 좋습니다.
+# pca.deinit()
